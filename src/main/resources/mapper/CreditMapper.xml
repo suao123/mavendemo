@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.dao.CreditMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.model.Credit" >
+    <constructor >
+      <idArg column="c_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="en_enname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="s_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="o_state" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="c_credit" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    c_id, en_enname, s_name, o_state, c_credit
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.demo.model.CreditExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from mess_credit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from mess_credit
+    where c_id = #{cId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mess_credit
+    where c_id = #{cId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.demo.model.CreditExample" >
+    delete from mess_credit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.demo.model.Credit" >
+    insert into mess_credit (c_id, en_enname, s_name, 
+      o_state, c_credit)
+    values (#{cId,jdbcType=INTEGER}, #{enEnname,jdbcType=VARCHAR}, #{sName,jdbcType=VARCHAR}, 
+      #{oState,jdbcType=VARCHAR}, #{cCredit,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.model.Credit" >
+    insert into mess_credit
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        c_id,
+      </if>
+      <if test="enEnname != null" >
+        en_enname,
+      </if>
+      <if test="sName != null" >
+        s_name,
+      </if>
+      <if test="oState != null" >
+        o_state,
+      </if>
+      <if test="cCredit != null" >
+        c_credit,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cId != null" >
+        #{cId,jdbcType=INTEGER},
+      </if>
+      <if test="enEnname != null" >
+        #{enEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="sName != null" >
+        #{sName,jdbcType=VARCHAR},
+      </if>
+      <if test="oState != null" >
+        #{oState,jdbcType=VARCHAR},
+      </if>
+      <if test="cCredit != null" >
+        #{cCredit,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.demo.model.CreditExample" resultType="java.lang.Integer" >
+    select count(*) from mess_credit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update mess_credit
+    <set >
+      <if test="record.cId != null" >
+        c_id = #{record.cId,jdbcType=INTEGER},
+      </if>
+      <if test="record.enEnname != null" >
+        en_enname = #{record.enEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sName != null" >
+        s_name = #{record.sName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.oState != null" >
+        o_state = #{record.oState,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cCredit != null" >
+        c_credit = #{record.cCredit,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update mess_credit
+    set c_id = #{record.cId,jdbcType=INTEGER},
+      en_enname = #{record.enEnname,jdbcType=VARCHAR},
+      s_name = #{record.sName,jdbcType=VARCHAR},
+      o_state = #{record.oState,jdbcType=VARCHAR},
+      c_credit = #{record.cCredit,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.model.Credit" >
+    update mess_credit
+    <set >
+      <if test="enEnname != null" >
+        en_enname = #{enEnname,jdbcType=VARCHAR},
+      </if>
+      <if test="sName != null" >
+        s_name = #{sName,jdbcType=VARCHAR},
+      </if>
+      <if test="oState != null" >
+        o_state = #{oState,jdbcType=VARCHAR},
+      </if>
+      <if test="cCredit != null" >
+        c_credit = #{cCredit,jdbcType=INTEGER},
+      </if>
+    </set>
+    where c_id = #{cId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.model.Credit" >
+    update mess_credit
+    set en_enname = #{enEnname,jdbcType=VARCHAR},
+      s_name = #{sName,jdbcType=VARCHAR},
+      o_state = #{oState,jdbcType=VARCHAR},
+      c_credit = #{cCredit,jdbcType=INTEGER}
+    where c_id = #{cId,jdbcType=INTEGER}
+  </update>
+</mapper>

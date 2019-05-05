@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.dao.EnterpriseMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.model.Enterprise" >
+    <constructor >
+      <idArg column="en_phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="en_ename" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="en_boss" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="en_email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="en_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="pwd" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="en_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    en_phone, en_ename, en_boss, en_email, en_name, pwd, en_state
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.demo.model.EnterpriseExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from mess_enterprise
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from mess_enterprise
+    where en_phone = #{enPhone,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from mess_enterprise
+    where en_phone = #{enPhone,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.demo.model.EnterpriseExample" >
+    delete from mess_enterprise
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.demo.model.Enterprise" >
+    insert into mess_enterprise (en_phone, en_ename, en_boss, 
+      en_email, en_name, pwd, 
+      en_state)
+    values (#{enPhone,jdbcType=VARCHAR}, #{enEname,jdbcType=VARCHAR}, #{enBoss,jdbcType=VARCHAR}, 
+      #{enEmail,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+      #{enState,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.model.Enterprise" >
+    insert into mess_enterprise
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="enPhone != null" >
+        en_phone,
+      </if>
+      <if test="enEname != null" >
+        en_ename,
+      </if>
+      <if test="enBoss != null" >
+        en_boss,
+      </if>
+      <if test="enEmail != null" >
+        en_email,
+      </if>
+      <if test="enName != null" >
+        en_name,
+      </if>
+      <if test="pwd != null" >
+        pwd,
+      </if>
+      <if test="enState != null" >
+        en_state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="enPhone != null" >
+        #{enPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="enEname != null" >
+        #{enEname,jdbcType=VARCHAR},
+      </if>
+      <if test="enBoss != null" >
+        #{enBoss,jdbcType=VARCHAR},
+      </if>
+      <if test="enEmail != null" >
+        #{enEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null" >
+        #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="enState != null" >
+        #{enState,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.demo.model.EnterpriseExample" resultType="java.lang.Integer" >
+    select count(*) from mess_enterprise
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update mess_enterprise
+    <set >
+      <if test="record.enPhone != null" >
+        en_phone = #{record.enPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enEname != null" >
+        en_ename = #{record.enEname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enBoss != null" >
+        en_boss = #{record.enBoss,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enEmail != null" >
+        en_email = #{record.enEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enName != null" >
+        en_name = #{record.enName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pwd != null" >
+        pwd = #{record.pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enState != null" >
+        en_state = #{record.enState,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update mess_enterprise
+    set en_phone = #{record.enPhone,jdbcType=VARCHAR},
+      en_ename = #{record.enEname,jdbcType=VARCHAR},
+      en_boss = #{record.enBoss,jdbcType=VARCHAR},
+      en_email = #{record.enEmail,jdbcType=VARCHAR},
+      en_name = #{record.enName,jdbcType=VARCHAR},
+      pwd = #{record.pwd,jdbcType=VARCHAR},
+      en_state = #{record.enState,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.model.Enterprise" >
+    update mess_enterprise
+    <set >
+      <if test="enEname != null" >
+        en_ename = #{enEname,jdbcType=VARCHAR},
+      </if>
+      <if test="enBoss != null" >
+        en_boss = #{enBoss,jdbcType=VARCHAR},
+      </if>
+      <if test="enEmail != null" >
+        en_email = #{enEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="enName != null" >
+        en_name = #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="enState != null" >
+        en_state = #{enState,jdbcType=INTEGER},
+      </if>
+    </set>
+    where en_phone = #{enPhone,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.model.Enterprise" >
+    update mess_enterprise
+    set en_ename = #{enEname,jdbcType=VARCHAR},
+      en_boss = #{enBoss,jdbcType=VARCHAR},
+      en_email = #{enEmail,jdbcType=VARCHAR},
+      en_name = #{enName,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      en_state = #{enState,jdbcType=INTEGER}
+    where en_phone = #{enPhone,jdbcType=VARCHAR}
+  </update>
+</mapper>
