@@ -4,6 +4,7 @@ import com.demo.model.Enterprise;
 import com.demo.service.EnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -124,4 +125,9 @@ public class EnterpriseController {
         return "/Enterpriseadmin/tender";
     }
 
+    @RequestMapping("/Enterpriseadmin/addTender")
+    public  @ResponseBody Object addTender(Model model, HttpServletRequest request, HttpSession session) throws  Exception{
+        
+
+    }
 }
