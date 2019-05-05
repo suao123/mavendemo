@@ -314,62 +314,52 @@ public class CreditExample {
             return (Criteria) this;
         }
 
-        public Criteria andOStateEqualTo(String value) {
+        public Criteria andOStateEqualTo(Integer value) {
             addCriterion("o_state =", value, "oState");
             return (Criteria) this;
         }
 
-        public Criteria andOStateNotEqualTo(String value) {
+        public Criteria andOStateNotEqualTo(Integer value) {
             addCriterion("o_state <>", value, "oState");
             return (Criteria) this;
         }
 
-        public Criteria andOStateGreaterThan(String value) {
+        public Criteria andOStateGreaterThan(Integer value) {
             addCriterion("o_state >", value, "oState");
             return (Criteria) this;
         }
 
-        public Criteria andOStateGreaterThanOrEqualTo(String value) {
+        public Criteria andOStateGreaterThanOrEqualTo(Integer value) {
             addCriterion("o_state >=", value, "oState");
             return (Criteria) this;
         }
 
-        public Criteria andOStateLessThan(String value) {
+        public Criteria andOStateLessThan(Integer value) {
             addCriterion("o_state <", value, "oState");
             return (Criteria) this;
         }
 
-        public Criteria andOStateLessThanOrEqualTo(String value) {
+        public Criteria andOStateLessThanOrEqualTo(Integer value) {
             addCriterion("o_state <=", value, "oState");
             return (Criteria) this;
         }
 
-        public Criteria andOStateLike(String value) {
-            addCriterion("o_state like", value, "oState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOStateNotLike(String value) {
-            addCriterion("o_state not like", value, "oState");
-            return (Criteria) this;
-        }
-
-        public Criteria andOStateIn(List<String> values) {
+        public Criteria andOStateIn(List<Integer> values) {
             addCriterion("o_state in", values, "oState");
             return (Criteria) this;
         }
 
-        public Criteria andOStateNotIn(List<String> values) {
+        public Criteria andOStateNotIn(List<Integer> values) {
             addCriterion("o_state not in", values, "oState");
             return (Criteria) this;
         }
 
-        public Criteria andOStateBetween(String value1, String value2) {
+        public Criteria andOStateBetween(Integer value1, Integer value2) {
             addCriterion("o_state between", value1, value2, "oState");
             return (Criteria) this;
         }
 
-        public Criteria andOStateNotBetween(String value1, String value2) {
+        public Criteria andOStateNotBetween(Integer value1, Integer value2) {
             addCriterion("o_state not between", value1, value2, "oState");
             return (Criteria) this;
         }

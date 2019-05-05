@@ -4,7 +4,6 @@ import com.demo.model.Enterprise;
 import com.demo.service.EnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -84,5 +83,45 @@ public class EnterpriseController {
         return res;
     }
 
-    @Re
+    @RequestMapping("/Enterpriseadmin/home")
+    public String home(){
+        return "/Enterpriseadmin/home";
+    }
+
+    @RequestMapping("/Enterpriseadmin/update")
+    public @ResponseBody Object updateenterprise(HttpServletRequest request, HttpSession session){
+        Enterprise oldEnterprise = (Enterprise) session.getAttribute("enterprise");
+        String  e_phone = oldEnterprise.setEnPhone();
+        HashMap<String, String> res = new HashMap<>();
+        Enterprise newEnterprise = new Enterprise();
+        String phone = e_phone;
+        String enname = request.getParameter("enname");
+        String name = request.getParameter("name");
+        String boss = request.getParameter("boss");
+        String email = request.getParameter("email");
+        String pwd = request.getParameter("pwd");
+        String info = request.getParameter("info");
+        newEnterprise.setEnBoss(boss);
+        newEnterprise.setEnState(oldEnterprise.getEnState());
+        newEnterprise.setEnPhone(phone);
+        newEnterprise.setEnEmail(email);
+        newEnterprise.setEnEname(enname);
+        newEnterprise.setEnName(name);
+        newEnterprise.setPwd(pwd);
+        newEnterprise.setEnInfo(info);
+        if(phone.length() == 1){
+            enterpriseService.update(phone, newEnterprise);
+            session.removeAttribute("enterprise");
+            session.setAttribute("enterprise", newEnterprise);
+            res.put("stateCode", "1");
+        } else {
+            res.put("stateCode", "0");
+        }
+    }
+
+    @RequestMapping("/Enterpriseadmin/tender")
+    public String Tender(){
+        return "/Enterpriseadmin/tender";
+    }
+
 }

@@ -1,8 +1,5 @@
 package com.demo.service.impl;
 
-import com.demo.dao.CreditMapper;
-import com.demo.model.Credit;
-import com.demo.model.CreditExample;
 import com.demo.service.CreditService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

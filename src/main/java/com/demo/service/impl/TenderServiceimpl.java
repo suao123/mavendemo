@@ -1,8 +1,5 @@
 package com.demo.service.impl;
 
-import com.demo.dao.TenderMapper;
-import com.demo.model.Tender;
-import com.demo.model.TenderExample;
 import com.demo.service.TenterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -6,7 +6,7 @@
       <idArg column="c_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="en_enname" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="s_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="o_state" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="o_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="c_credit" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
@@ -106,7 +106,7 @@
     insert into mess_credit (c_id, en_enname, s_name, 
       o_state, c_credit)
     values (#{cId,jdbcType=INTEGER}, #{enEnname,jdbcType=VARCHAR}, #{sName,jdbcType=VARCHAR}, 
-      #{oState,jdbcType=VARCHAR}, #{cCredit,jdbcType=INTEGER})
+      #{oState,jdbcType=INTEGER}, #{cCredit,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.demo.model.Credit" >
     insert into mess_credit
@@ -138,7 +138,7 @@
         #{sName,jdbcType=VARCHAR},
       </if>
       <if test="oState != null" >
-        #{oState,jdbcType=VARCHAR},
+        #{oState,jdbcType=INTEGER},
       </if>
       <if test="cCredit != null" >
         #{cCredit,jdbcType=INTEGER},
@@ -164,7 +164,7 @@
         s_name = #{record.sName,jdbcType=VARCHAR},
       </if>
       <if test="record.oState != null" >
-        o_state = #{record.oState,jdbcType=VARCHAR},
+        o_state = #{record.oState,jdbcType=INTEGER},
       </if>
       <if test="record.cCredit != null" >
         c_credit = #{record.cCredit,jdbcType=INTEGER},
@@ -179,7 +179,7 @@
     set c_id = #{record.cId,jdbcType=INTEGER},
       en_enname = #{record.enEnname,jdbcType=VARCHAR},
       s_name = #{record.sName,jdbcType=VARCHAR},
-      o_state = #{record.oState,jdbcType=VARCHAR},
+      o_state = #{record.oState,jdbcType=INTEGER},
       c_credit = #{record.cCredit,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -195,7 +195,7 @@
         s_name = #{sName,jdbcType=VARCHAR},
       </if>
       <if test="oState != null" >
-        o_state = #{oState,jdbcType=VARCHAR},
+        o_state = #{oState,jdbcType=INTEGER},
       </if>
       <if test="cCredit != null" >
         c_credit = #{cCredit,jdbcType=INTEGER},
@@ -207,7 +207,7 @@
     update mess_credit
     set en_enname = #{enEnname,jdbcType=VARCHAR},
       s_name = #{sName,jdbcType=VARCHAR},
-      o_state = #{oState,jdbcType=VARCHAR},
+      o_state = #{oState,jdbcType=INTEGER},
       c_credit = #{cCredit,jdbcType=INTEGER}
     where c_id = #{cId,jdbcType=INTEGER}
   </update>

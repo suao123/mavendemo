@@ -454,6 +454,76 @@ public class EnterpriseExample {
             return (Criteria) this;
         }
 
+        public Criteria andEnInfoIsNull() {
+            addCriterion("en_info is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoIsNotNull() {
+            addCriterion("en_info is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoEqualTo(String value) {
+            addCriterion("en_info =", value, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoNotEqualTo(String value) {
+            addCriterion("en_info <>", value, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoGreaterThan(String value) {
+            addCriterion("en_info >", value, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoGreaterThanOrEqualTo(String value) {
+            addCriterion("en_info >=", value, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoLessThan(String value) {
+            addCriterion("en_info <", value, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoLessThanOrEqualTo(String value) {
+            addCriterion("en_info <=", value, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoLike(String value) {
+            addCriterion("en_info like", value, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoNotLike(String value) {
+            addCriterion("en_info not like", value, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoIn(List<String> values) {
+            addCriterion("en_info in", values, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoNotIn(List<String> values) {
+            addCriterion("en_info not in", values, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoBetween(String value1, String value2) {
+            addCriterion("en_info between", value1, value2, "enInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnInfoNotBetween(String value1, String value2) {
+            addCriterion("en_info not between", value1, value2, "enInfo");
+            return (Criteria) this;
+        }
+
         public Criteria andPwdIsNull() {
             addCriterion("pwd is null");
             return (Criteria) this;

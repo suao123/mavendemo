@@ -7,11 +7,11 @@ public class Credit {
 
     private String sName;
 
-    private String oState;
+    private Integer oState;
 
     private Integer cCredit;
 
-    public Credit(Integer cId, String enEnname, String sName, String oState, Integer cCredit) {
+    public Credit(Integer cId, String enEnname, String sName, Integer oState, Integer cCredit) {
         this.cId = cId;
         this.enEnname = enEnname;
         this.sName = sName;
@@ -47,12 +47,12 @@ public class Credit {
         this.sName = sName == null ? null : sName.trim();
     }
 
-    public String getoState() {
+    public Integer getoState() {
         return oState;
     }
 
-    public void setoState(String oState) {
-        this.oState = oState == null ? null : oState.trim();
+    public void setoState(Integer oState) {
+        this.oState = oState;
     }
 
     public Integer getcCredit() {

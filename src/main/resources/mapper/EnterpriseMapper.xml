@@ -8,6 +8,7 @@
       <arg column="en_boss" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="en_email" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="en_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="en_info" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="pwd" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="en_state" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
@@ -71,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    en_phone, en_ename, en_boss, en_email, en_name, pwd, en_state
+    en_phone, en_ename, en_boss, en_email, en_name, en_info, pwd, en_state
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.demo.model.EnterpriseExample" >
     select
@@ -106,11 +107,11 @@
   </delete>
   <insert id="insert" parameterType="com.demo.model.Enterprise" >
     insert into mess_enterprise (en_phone, en_ename, en_boss, 
-      en_email, en_name, pwd, 
-      en_state)
+      en_email, en_name, en_info, 
+      pwd, en_state)
     values (#{enPhone,jdbcType=VARCHAR}, #{enEname,jdbcType=VARCHAR}, #{enBoss,jdbcType=VARCHAR}, 
-      #{enEmail,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
-      #{enState,jdbcType=INTEGER})
+      #{enEmail,jdbcType=VARCHAR}, #{enName,jdbcType=VARCHAR}, #{enInfo,jdbcType=VARCHAR}, 
+      #{pwd,jdbcType=VARCHAR}, #{enState,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.demo.model.Enterprise" >
     insert into mess_enterprise
@@ -129,6 +130,9 @@
       </if>
       <if test="enName != null" >
         en_name,
+      </if>
+      <if test="enInfo != null" >
+        en_info,
       </if>
       <if test="pwd != null" >
         pwd,
@@ -152,6 +156,9 @@
       </if>
       <if test="enName != null" >
         #{enName,jdbcType=VARCHAR},
+      </if>
+      <if test="enInfo != null" >
+        #{enInfo,jdbcType=VARCHAR},
       </if>
       <if test="pwd != null" >
         #{pwd,jdbcType=VARCHAR},
@@ -185,6 +192,9 @@
       <if test="record.enName != null" >
         en_name = #{record.enName,jdbcType=VARCHAR},
       </if>
+      <if test="record.enInfo != null" >
+        en_info = #{record.enInfo,jdbcType=VARCHAR},
+      </if>
       <if test="record.pwd != null" >
         pwd = #{record.pwd,jdbcType=VARCHAR},
       </if>
@@ -203,6 +213,7 @@
       en_boss = #{record.enBoss,jdbcType=VARCHAR},
       en_email = #{record.enEmail,jdbcType=VARCHAR},
       en_name = #{record.enName,jdbcType=VARCHAR},
+      en_info = #{record.enInfo,jdbcType=VARCHAR},
       pwd = #{record.pwd,jdbcType=VARCHAR},
       en_state = #{record.enState,jdbcType=INTEGER}
     <if test="_parameter != null" >
@@ -224,6 +235,9 @@
       <if test="enName != null" >
         en_name = #{enName,jdbcType=VARCHAR},
       </if>
+      <if test="enInfo != null" >
+        en_info = #{enInfo,jdbcType=VARCHAR},
+      </if>
       <if test="pwd != null" >
         pwd = #{pwd,jdbcType=VARCHAR},
       </if>
@@ -239,6 +253,7 @@
       en_boss = #{enBoss,jdbcType=VARCHAR},
       en_email = #{enEmail,jdbcType=VARCHAR},
       en_name = #{enName,jdbcType=VARCHAR},
+      en_info = #{enInfo,jdbcType=VARCHAR},
       pwd = #{pwd,jdbcType=VARCHAR},
       en_state = #{enState,jdbcType=INTEGER}
     where en_phone = #{enPhone,jdbcType=VARCHAR}

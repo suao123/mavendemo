@@ -11,16 +11,19 @@ public class Enterprise {
 
     private String enName;
 
+    private String enInfo;
+
     private String pwd;
 
     private Integer enState;
 
-    public Enterprise(String enPhone, String enEname, String enBoss, String enEmail, String enName, String pwd, Integer enState) {
+    public Enterprise(String enPhone, String enEname, String enBoss, String enEmail, String enName, String enInfo, String pwd, Integer enState) {
         this.enPhone = enPhone;
         this.enEname = enEname;
         this.enBoss = enBoss;
         this.enEmail = enEmail;
         this.enName = enName;
+        this.enInfo = enInfo;
         this.pwd = pwd;
         this.enState = enState;
     }
@@ -67,6 +70,14 @@ public class Enterprise {
 
     public void setEnName(String enName) {
         this.enName = enName == null ? null : enName.trim();
+    }
+
+    public String getEnInfo() {
+        return enInfo;
+    }
+
+    public void setEnInfo(String enInfo) {
+        this.enInfo = enInfo == null ? null : enInfo.trim();
     }
 
     public String getPwd() {
