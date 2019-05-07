@@ -127,7 +127,7 @@ public class EnterpriseController {
 
     @RequestMapping("/Enterpriseadmin/addTender")
     public  @ResponseBody Object addTender(Model model, HttpServletRequest request, HttpSession session) throws  Exception{
-        
+
 
     }
 }

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.dao.TenderMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.model.Tender" >
+    <constructor >
+      <idArg column="t_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="t_tname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="t_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="t_phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="t_email" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="t_startdate" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="t_txt" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="t_info" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="en_phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="t_enddate" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    t_id, t_tname, t_name, t_phone, t_email, t_startdate, t_txt, t_info, en_phone, t_enddate
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.demo.model.TenderExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from mess_tender
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from mess_tender
+    where t_id = #{tId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mess_tender
+    where t_id = #{tId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.demo.model.TenderExample" >
+    delete from mess_tender
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.demo.model.Tender" >
+    insert into mess_tender (t_id, t_tname, t_name, 
+      t_phone, t_email, t_startdate, 
+      t_txt, t_info, en_phone, 
+      t_enddate)
+    values (#{tId,jdbcType=INTEGER}, #{tTname,jdbcType=VARCHAR}, #{tName,jdbcType=VARCHAR}, 
+      #{tPhone,jdbcType=VARCHAR}, #{tEmail,jdbcType=VARCHAR}, #{tStartdate,jdbcType=VARCHAR}, 
+      #{tTxt,jdbcType=VARCHAR}, #{tInfo,jdbcType=VARCHAR}, #{enPhone,jdbcType=VARCHAR}, 
+      #{tEnddate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.model.Tender" >
+    insert into mess_tender
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tId != null" >
+        t_id,
+      </if>
+      <if test="tTname != null" >
+        t_tname,
+      </if>
+      <if test="tName != null" >
+        t_name,
+      </if>
+      <if test="tPhone != null" >
+        t_phone,
+      </if>
+      <if test="tEmail != null" >
+        t_email,
+      </if>
+      <if test="tStartdate != null" >
+        t_startdate,
+      </if>
+      <if test="tTxt != null" >
+        t_txt,
+      </if>
+      <if test="tInfo != null" >
+        t_info,
+      </if>
+      <if test="enPhone != null" >
+        en_phone,
+      </if>
+      <if test="tEnddate != null" >
+        t_enddate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tId != null" >
+        #{tId,jdbcType=INTEGER},
+      </if>
+      <if test="tTname != null" >
+        #{tTname,jdbcType=VARCHAR},
+      </if>
+      <if test="tName != null" >
+        #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="tPhone != null" >
+        #{tPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="tEmail != null" >
+        #{tEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="tStartdate != null" >
+        #{tStartdate,jdbcType=VARCHAR},
+      </if>
+      <if test="tTxt != null" >
+        #{tTxt,jdbcType=VARCHAR},
+      </if>
+      <if test="tInfo != null" >
+        #{tInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="enPhone != null" >
+        #{enPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="tEnddate != null" >
+        #{tEnddate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.demo.model.TenderExample" resultType="java.lang.Integer" >
+    select count(*) from mess_tender
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update mess_tender
+    <set >
+      <if test="record.tId != null" >
+        t_id = #{record.tId,jdbcType=INTEGER},
+      </if>
+      <if test="record.tTname != null" >
+        t_tname = #{record.tTname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tName != null" >
+        t_name = #{record.tName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tPhone != null" >
+        t_phone = #{record.tPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tEmail != null" >
+        t_email = #{record.tEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tStartdate != null" >
+        t_startdate = #{record.tStartdate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tTxt != null" >
+        t_txt = #{record.tTxt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tInfo != null" >
+        t_info = #{record.tInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enPhone != null" >
+        en_phone = #{record.enPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tEnddate != null" >
+        t_enddate = #{record.tEnddate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update mess_tender
+    set t_id = #{record.tId,jdbcType=INTEGER},
+      t_tname = #{record.tTname,jdbcType=VARCHAR},
+      t_name = #{record.tName,jdbcType=VARCHAR},
+      t_phone = #{record.tPhone,jdbcType=VARCHAR},
+      t_email = #{record.tEmail,jdbcType=VARCHAR},
+      t_startdate = #{record.tStartdate,jdbcType=VARCHAR},
+      t_txt = #{record.tTxt,jdbcType=VARCHAR},
+      t_info = #{record.tInfo,jdbcType=VARCHAR},
+      en_phone = #{record.enPhone,jdbcType=VARCHAR},
+      t_enddate = #{record.tEnddate,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.model.Tender" >
+    update mess_tender
+    <set >
+      <if test="tTname != null" >
+        t_tname = #{tTname,jdbcType=VARCHAR},
+      </if>
+      <if test="tName != null" >
+        t_name = #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="tPhone != null" >
+        t_phone = #{tPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="tEmail != null" >
+        t_email = #{tEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="tStartdate != null" >
+        t_startdate = #{tStartdate,jdbcType=VARCHAR},
+      </if>
+      <if test="tTxt != null" >
+        t_txt = #{tTxt,jdbcType=VARCHAR},
+      </if>
+      <if test="tInfo != null" >
+        t_info = #{tInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="enPhone != null" >
+        en_phone = #{enPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="tEnddate != null" >
+        t_enddate = #{tEnddate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where t_id = #{tId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.model.Tender" >
+    update mess_tender
+    set t_tname = #{tTname,jdbcType=VARCHAR},
+      t_name = #{tName,jdbcType=VARCHAR},
+      t_phone = #{tPhone,jdbcType=VARCHAR},
+      t_email = #{tEmail,jdbcType=VARCHAR},
+      t_startdate = #{tStartdate,jdbcType=VARCHAR},
+      t_txt = #{tTxt,jdbcType=VARCHAR},
+      t_info = #{tInfo,jdbcType=VARCHAR},
+      en_phone = #{enPhone,jdbcType=VARCHAR},
+      t_enddate = #{tEnddate,jdbcType=VARCHAR}
+    where t_id = #{tId,jdbcType=INTEGER}
+  </update>
+</mapper>

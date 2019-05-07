@@ -11,5 +11,10 @@
       <user-name>root</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="MySQL - demo@lizhisuao.top" uuid="e612a763-2889-47fa-8781-a081c6ef457e">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+    </data-source>
   </component>
 </project>
