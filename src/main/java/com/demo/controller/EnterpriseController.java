@@ -1,17 +1,25 @@
 package com.demo.controller;
 
 import com.demo.model.Enterprise;
+import com.demo.model.Tender;
 import com.demo.service.EnterpriseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import javax.servlet.MultipartConfigElement;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
 import java.util.HashMap;
+import java.util.UUID;
 
 @Controller
 public class EnterpriseController {
@@ -92,7 +100,7 @@ public class EnterpriseController {
     @RequestMapping("/Enterpriseadmin/update")
     public @ResponseBody Object updateenterprise(HttpServletRequest request, HttpSession session){
         Enterprise oldEnterprise = (Enterprise) session.getAttribute("enterprise");
-        String  e_phone = oldEnterprise.setEnPhone();
+        String  e_phone = oldEnterprise.getEnPhone();
         HashMap<String, String> res = new HashMap<>();
         Enterprise newEnterprise = new Enterprise();
         String phone = e_phone;
@@ -118,6 +126,7 @@ public class EnterpriseController {
         } else {
             res.put("stateCode", "0");
         }
+        return res;
     }
 
     @RequestMapping("/Enterpriseadmin/tender")
@@ -127,7 +136,19 @@ public class EnterpriseController {
 
     @RequestMapping("/Enterpriseadmin/addTender")
     public  @ResponseBody Object addTender(Model model, HttpServletRequest request, HttpSession session) throws  Exception{
-
-
+        Tender tender = new Tender();
+        MultipartHttpServletRequest multipartRequest =(MultipartHttpServletRequest) request;
+        MultipartFile file = multipartRequest.getFile("file");
+        String originalFileName = file.getOriginalFilename();
+        String path = "/home/lizhisuao/桌面/demo/mavendemo/src/main/webapp/static-doxc/";
+        HashMap<String, String> res = new HashMap<>();
+        String filepath = "";
+        if(!file.isEmpty()){
+            String newFilename = UUID.randomUUID() + originalFileName.substring(originalFileName.lastIndexOf("."));
+            File newfile = new File(path + newFilename);
+            file.transferTo(newfile);
+        }
+    res.put("stateCode", "1");
+        return res;
     }
 }

@@ -1,5 +1,7 @@
 package com.demo.service;
 
+import com.demo.model.Credit;
+
 import java.util.List;
 
 /**

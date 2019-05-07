@@ -1,5 +1,7 @@
 package com.demo.service;
 
+import com.demo.model.Order;
+
 import java.util.List;
 
 public interface OrderService {

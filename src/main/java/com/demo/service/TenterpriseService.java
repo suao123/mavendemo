@@ -1,5 +1,7 @@
 package com.demo.service;
 
+import com.demo.model.Tender;
+
 import java.util.List;
 
 public interface TenterpriseService {
