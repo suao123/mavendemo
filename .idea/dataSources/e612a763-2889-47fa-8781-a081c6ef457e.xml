@@ -1009,79 +1009,128 @@
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="232" name="o_date">
+    <column id="251" parent="232" name="o_1date">
       <Position>3</Position>
       <DataType>varchar(0)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="232" name="en_phone">
+    <column id="252" parent="232" name="o_2date">
       <Position>4</Position>
-      <DataType>varchar(12)|0s</DataType>
+      <DataType>varchar(0)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="232" name="s_phone">
+    <column id="253" parent="232" name="o_3date">
       <Position>5</Position>
+      <DataType>varchar(0)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="232" name="o_4date">
+      <Position>6</Position>
+      <DataType>varchar(0)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="255" parent="232" name="o_1pay">
+      <Position>7</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="256" parent="232" name="o_2pay">
+      <Position>8</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="257" parent="232" name="o_3pay">
+      <Position>9</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="258" parent="232" name="o_4pay">
+      <Position>10</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <DefaultExpression>0</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="259" parent="232" name="en_evaluation">
+      <Position>11</Position>
+      <DataType>int(2) unsigned zerofill|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="260" parent="232" name="en_phone">
+      <Position>12</Position>
       <DataType>varchar(12)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="254" parent="232" name="PRIMARY">
+    <column id="261" parent="232" name="s_phone">
+      <Position>13</Position>
+      <DataType>varchar(12)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="262" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>o_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="255" parent="233" name="t_id">
+    <column id="263" parent="233" name="t_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="233" name="t_tname">
+    <column id="264" parent="233" name="t_tname">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="233" name="t_name">
+    <column id="265" parent="233" name="t_name">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="233" name="t_phone">
+    <column id="266" parent="233" name="t_phone">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="233" name="t_email">
+    <column id="267" parent="233" name="t_email">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="233" name="t_startdate">
+    <column id="268" parent="233" name="t_startdate">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="233" name="t_txt">
+    <column id="269" parent="233" name="t_txt">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="233" name="t_info">
+    <column id="270" parent="233" name="t_info">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="263" parent="233" name="en_phone">
+    <column id="271" parent="233" name="en_phone">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="264" parent="233" name="t_enddate">
+    <column id="272" parent="233" name="t_enddate">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="265" parent="233" name="PRIMARY">
+    <column id="273" parent="233" name="t_addperson">
+      <Position>11</Position>
+      <DataType>int(2) unsigned zerofill|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="274" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>t_id</ColNames>
       <Primary>1</Primary>

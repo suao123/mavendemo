@@ -5,7 +5,15 @@
     <constructor >
       <idArg column="o_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="t_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="o_date" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="o_1date" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="o_2date" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="o_3date" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="o_4date" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="o_1pay" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="o_2pay" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="o_3pay" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="o_4pay" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="en_evaluation" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="en_phone" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="s_phone" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
@@ -69,7 +77,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    o_id, t_name, o_date, en_phone, s_phone
+    o_id, t_name, o_1date, o_2date, o_3date, o_4date, o_1pay, o_2pay, o_3pay, o_4pay, 
+    en_evaluation, en_phone, s_phone
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.demo.model.OrderExample" >
     select
@@ -103,10 +112,16 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.demo.model.Order" >
-    insert into mess_order (o_id, t_name, o_date, 
-      en_phone, s_phone)
-    values (#{oId,jdbcType=INTEGER}, #{tName,jdbcType=VARCHAR}, #{oDate,jdbcType=VARCHAR}, 
-      #{enPhone,jdbcType=VARCHAR}, #{sPhone,jdbcType=VARCHAR})
+    insert into mess_order (o_id, t_name, o_1date, 
+      o_2date, o_3date, o_4date, 
+      o_1pay, o_2pay, o_3pay, o_4pay, 
+      en_evaluation, en_phone, s_phone
+      )
+    values (#{oId,jdbcType=INTEGER}, #{tName,jdbcType=VARCHAR}, #{o1date,jdbcType=VARCHAR}, 
+      #{o2date,jdbcType=VARCHAR}, #{o3date,jdbcType=VARCHAR}, #{o4date,jdbcType=VARCHAR}, 
+      #{o1pay,jdbcType=BIT}, #{o2pay,jdbcType=BIT}, #{o3pay,jdbcType=BIT}, #{o4pay,jdbcType=BIT}, 
+      #{enEvaluation,jdbcType=INTEGER}, #{enPhone,jdbcType=VARCHAR}, #{sPhone,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.demo.model.Order" >
     insert into mess_order
@@ -117,8 +132,32 @@
       <if test="tName != null" >
         t_name,
       </if>
-      <if test="oDate != null" >
-        o_date,
+      <if test="o1date != null" >
+        o_1date,
+      </if>
+      <if test="o2date != null" >
+        o_2date,
+      </if>
+      <if test="o3date != null" >
+        o_3date,
+      </if>
+      <if test="o4date != null" >
+        o_4date,
+      </if>
+      <if test="o1pay != null" >
+        o_1pay,
+      </if>
+      <if test="o2pay != null" >
+        o_2pay,
+      </if>
+      <if test="o3pay != null" >
+        o_3pay,
+      </if>
+      <if test="o4pay != null" >
+        o_4pay,
+      </if>
+      <if test="enEvaluation != null" >
+        en_evaluation,
       </if>
       <if test="enPhone != null" >
         en_phone,
@@ -134,8 +173,32 @@
       <if test="tName != null" >
         #{tName,jdbcType=VARCHAR},
       </if>
-      <if test="oDate != null" >
-        #{oDate,jdbcType=VARCHAR},
+      <if test="o1date != null" >
+        #{o1date,jdbcType=VARCHAR},
+      </if>
+      <if test="o2date != null" >
+        #{o2date,jdbcType=VARCHAR},
+      </if>
+      <if test="o3date != null" >
+        #{o3date,jdbcType=VARCHAR},
+      </if>
+      <if test="o4date != null" >
+        #{o4date,jdbcType=VARCHAR},
+      </if>
+      <if test="o1pay != null" >
+        #{o1pay,jdbcType=BIT},
+      </if>
+      <if test="o2pay != null" >
+        #{o2pay,jdbcType=BIT},
+      </if>
+      <if test="o3pay != null" >
+        #{o3pay,jdbcType=BIT},
+      </if>
+      <if test="o4pay != null" >
+        #{o4pay,jdbcType=BIT},
+      </if>
+      <if test="enEvaluation != null" >
+        #{enEvaluation,jdbcType=INTEGER},
       </if>
       <if test="enPhone != null" >
         #{enPhone,jdbcType=VARCHAR},
@@ -160,8 +223,32 @@
       <if test="record.tName != null" >
         t_name = #{record.tName,jdbcType=VARCHAR},
       </if>
-      <if test="record.oDate != null" >
-        o_date = #{record.oDate,jdbcType=VARCHAR},
+      <if test="record.o1date != null" >
+        o_1date = #{record.o1date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.o2date != null" >
+        o_2date = #{record.o2date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.o3date != null" >
+        o_3date = #{record.o3date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.o4date != null" >
+        o_4date = #{record.o4date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.o1pay != null" >
+        o_1pay = #{record.o1pay,jdbcType=BIT},
+      </if>
+      <if test="record.o2pay != null" >
+        o_2pay = #{record.o2pay,jdbcType=BIT},
+      </if>
+      <if test="record.o3pay != null" >
+        o_3pay = #{record.o3pay,jdbcType=BIT},
+      </if>
+      <if test="record.o4pay != null" >
+        o_4pay = #{record.o4pay,jdbcType=BIT},
+      </if>
+      <if test="record.enEvaluation != null" >
+        en_evaluation = #{record.enEvaluation,jdbcType=INTEGER},
       </if>
       <if test="record.enPhone != null" >
         en_phone = #{record.enPhone,jdbcType=VARCHAR},
@@ -178,7 +265,15 @@
     update mess_order
     set o_id = #{record.oId,jdbcType=INTEGER},
       t_name = #{record.tName,jdbcType=VARCHAR},
-      o_date = #{record.oDate,jdbcType=VARCHAR},
+      o_1date = #{record.o1date,jdbcType=VARCHAR},
+      o_2date = #{record.o2date,jdbcType=VARCHAR},
+      o_3date = #{record.o3date,jdbcType=VARCHAR},
+      o_4date = #{record.o4date,jdbcType=VARCHAR},
+      o_1pay = #{record.o1pay,jdbcType=BIT},
+      o_2pay = #{record.o2pay,jdbcType=BIT},
+      o_3pay = #{record.o3pay,jdbcType=BIT},
+      o_4pay = #{record.o4pay,jdbcType=BIT},
+      en_evaluation = #{record.enEvaluation,jdbcType=INTEGER},
       en_phone = #{record.enPhone,jdbcType=VARCHAR},
       s_phone = #{record.sPhone,jdbcType=VARCHAR}
     <if test="_parameter != null" >
@@ -191,8 +286,32 @@
       <if test="tName != null" >
         t_name = #{tName,jdbcType=VARCHAR},
       </if>
-      <if test="oDate != null" >
-        o_date = #{oDate,jdbcType=VARCHAR},
+      <if test="o1date != null" >
+        o_1date = #{o1date,jdbcType=VARCHAR},
+      </if>
+      <if test="o2date != null" >
+        o_2date = #{o2date,jdbcType=VARCHAR},
+      </if>
+      <if test="o3date != null" >
+        o_3date = #{o3date,jdbcType=VARCHAR},
+      </if>
+      <if test="o4date != null" >
+        o_4date = #{o4date,jdbcType=VARCHAR},
+      </if>
+      <if test="o1pay != null" >
+        o_1pay = #{o1pay,jdbcType=BIT},
+      </if>
+      <if test="o2pay != null" >
+        o_2pay = #{o2pay,jdbcType=BIT},
+      </if>
+      <if test="o3pay != null" >
+        o_3pay = #{o3pay,jdbcType=BIT},
+      </if>
+      <if test="o4pay != null" >
+        o_4pay = #{o4pay,jdbcType=BIT},
+      </if>
+      <if test="enEvaluation != null" >
+        en_evaluation = #{enEvaluation,jdbcType=INTEGER},
       </if>
       <if test="enPhone != null" >
         en_phone = #{enPhone,jdbcType=VARCHAR},
@@ -206,7 +325,15 @@
   <update id="updateByPrimaryKey" parameterType="com.demo.model.Order" >
     update mess_order
     set t_name = #{tName,jdbcType=VARCHAR},
-      o_date = #{oDate,jdbcType=VARCHAR},
+      o_1date = #{o1date,jdbcType=VARCHAR},
+      o_2date = #{o2date,jdbcType=VARCHAR},
+      o_3date = #{o3date,jdbcType=VARCHAR},
+      o_4date = #{o4date,jdbcType=VARCHAR},
+      o_1pay = #{o1pay,jdbcType=BIT},
+      o_2pay = #{o2pay,jdbcType=BIT},
+      o_3pay = #{o3pay,jdbcType=BIT},
+      o_4pay = #{o4pay,jdbcType=BIT},
+      en_evaluation = #{enEvaluation,jdbcType=INTEGER},
       en_phone = #{enPhone,jdbcType=VARCHAR},
       s_phone = #{sPhone,jdbcType=VARCHAR}
     where o_id = #{oId,jdbcType=INTEGER}

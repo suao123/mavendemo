@@ -3,14 +3,14 @@ package com.demo.service.impl;
 import com.demo.dao.TenderMapper;
 import com.demo.model.Tender;
 import com.demo.model.TenderExample;
-import com.demo.service.TenterpriseService;
+import com.demo.service.TenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class TenderServiceimpl implements TenterpriseService {
+public class TenderServiceimpl implements TenderService {
 
     @Autowired
     private TenderMapper tenderMapper;

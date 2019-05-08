@@ -4,7 +4,7 @@ import com.demo.model.Tender;
 
 import java.util.List;
 
-public interface TenterpriseService {
+public interface TenderService {
     /**
      * 列出所有招标书
      */

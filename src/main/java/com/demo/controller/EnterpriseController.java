@@ -1,31 +1,43 @@
 package com.demo.controller;
 
 import com.demo.model.Enterprise;
+import com.demo.model.Order;
 import com.demo.model.Tender;
 import com.demo.service.EnterpriseService;
+import com.demo.service.OrderService;
+import com.demo.service.TenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.test.annotation.Rollback;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import javax.servlet.MultipartConfigElement;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.ws.rs.Path;
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Controller
 public class EnterpriseController {
 
     @Autowired
     private EnterpriseService  enterpriseService;
+
+    @Autowired
+    private OrderService orderService;
+
+    @Autowired
+    private TenderService tenderService;
 
     @RequestMapping(value = {"/Enterpriseadmin/index",  "/Enterpriseamdin"})
     public String login(){
@@ -134,10 +146,20 @@ public class EnterpriseController {
         return "/Enterpriseadmin/tender";
     }
 
-    @RequestMapping("/Enterpriseadmin/addTender")
-    public  @ResponseBody Object addTender(Model model, HttpServletRequest request, HttpSession session) throws  Exception{
+    @RequestMapping(value = "/Enterpriseadmin/addTender", method = {RequestMethod.GET, RequestMethod.POST})
+    public  @ResponseBody Object addTender(Model model, HttpServletRequest request, HttpSession session) throws IOException{
+        Enterprise enterprise = (Enterprise) session.getAttribute("enterprise");
         Tender tender = new Tender();
         MultipartHttpServletRequest multipartRequest =(MultipartHttpServletRequest) request;
+        String t_name = multipartRequest.getParameter("name");
+        String t_phone = multipartRequest.getParameter("phone");
+        String t_email = multipartRequest.getParameter("email");
+        String t_startdate = multipartRequest.getParameter("startdate");
+        String t_txt = "";
+        String t_info = multipartRequest.getParameter("info");
+        String en_phone = enterprise.getEnPhone();
+        String t_enddate = multipartRequest.getParameter("enddate");
+        Integer t_addperson = 0;
         MultipartFile file = multipartRequest.getFile("file");
         String originalFileName = file.getOriginalFilename();
         String path = "/home/lizhisuao/桌面/demo/mavendemo/src/main/webapp/static-doxc/";
@@ -147,8 +169,106 @@ public class EnterpriseController {
             String newFilename = UUID.randomUUID() + originalFileName.substring(originalFileName.lastIndexOf("."));
             File newfile = new File(path + newFilename);
             file.transferTo(newfile);
+            t_txt = newFilename;
+        } else {
+            res.put("stateCode", " 2");
+            return res;
         }
-    res.put("stateCode", "1");
-        return res;
+        tender.settName(t_name);
+        tender.settPhone(t_phone);
+        tender.settEmail(t_email);
+        tender.settStartdate(t_startdate);
+        tender.settTxt(t_txt);
+        tender.settInfo(t_info);
+        tender.setEnPhone(en_phone);
+        tender.settEnddate(t_enddate);
+        tender.settAddperson(t_addperson);
+        tenderService.add(tender);
+        res.put("stateCode", "1");
+            return res;
     }
+
+    @RequestMapping("/Enterpriseadmin/showTender/{page}")
+    public String showTender(Model model, HttpSession session, @PathVariable("page") int page){
+        Enterprise enterprise = (Enterprise) session.getAttribute("enterprise");
+        String en_phone = enterprise.getEnPhone();
+        List<Enterprise> enterprises = enterpriseService.list()
+                                                                                                .parallelStream()
+                                                                                                .filter(en -> en.getEnPhone().equals(en_phone))
+                                                                                                .collect(Collectors.toList());
+
+        model.addAttribute("page",page);
+        if(enterprises.size() % 20 == 0)
+            model.addAttribute("endPage", enterprises.size() / 20);
+        else
+            model.addAttribute("endPage", enterprises.size() / 20 + 1);
+
+        model.addAttribute("begin",String.valueOf((page - 1) * 20));
+
+        if(page == (enterprises.size() / 20) + 1)
+            if(enterprises.size() / 20 == 0){
+                model.addAttribute("end", enterprises.size());
+            }else{
+                model.addAttribute("end", enterprises.size() - 1);
+            }
+        else
+            model.addAttribute("end", String.valueOf(page * 20 - 1));
+        model.addAttribute("enterprises", enterprises);
+        return "/Enterpriseadmin/showTender";
+    }
+
+    @RequestMapping("/Enterpriseadmin/allTender/{page}")
+    public String allTender(Model model, @PathVariable("page") int page){
+        List<Enterprise> enterprises = enterpriseService.list()
+                                                                                        .parallelStream()
+                                                                                        .collect(Collectors.toList());
+
+        model.addAttribute("page",page);
+        if(enterprises.size() % 20 == 0)
+            model.addAttribute("endPage", enterprises.size() / 20);
+        else
+            model.addAttribute("endPage", enterprises.size() / 20 + 1);
+
+        model.addAttribute("begin",String.valueOf((page - 1) * 20));
+
+        if(page == (enterprises.size() / 20) + 1)
+            if(enterprises.size() / 20 == 0){
+                model.addAttribute("end", enterprises.size());
+            }else{
+                model.addAttribute("end", enterprises.size() - 1);
+            }
+        else
+            model.addAttribute("end", String.valueOf(page * 20 - 1));
+        model.addAttribute("enterprises", enterprises);
+        return "/Enterpriseadmin/allTender";
+    }
+
+    @RequestMapping("/Enterpriseadmin/showOrder/{page}")
+    public String showOrder(Model model, @PathVariable("page") int page, HttpSession session){
+        Enterprise enterprise  = (Enterprise) session.getAttribute("enterprise");
+        String en_phone = enterprise.getEnPhone();
+        List<Order> orders = orderService.listByEnterprisePhone(en_phone);
+
+        model.addAttribute("page",page);
+        if(orders.size() % 20 == 0)
+            model.addAttribute("endPage", orders.size() / 20);
+        else
+            model.addAttribute("endPage", orders.size() / 20 + 1);
+
+        model.addAttribute("begin",String.valueOf((page - 1) * 20));
+
+        if(page == (orders.size() / 20) + 1)
+            if(orders.size() / 20 == 0){
+                model.addAttribute("end", orders.size());
+            }else{
+                model.addAttribute("end", orders.size() - 1);
+            }
+        else
+            model.addAttribute("end", String.valueOf(page * 20 - 1));
+        model.addAttribute("enterprises", orders);
+        model.addAttribute("orders", orders);
+        return "/Enterpriseadmin/showOrder";
+    }
+
+
 }

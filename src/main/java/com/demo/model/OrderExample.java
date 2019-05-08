@@ -234,73 +234,583 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andODateIsNull() {
-            addCriterion("o_date is null");
+        public Criteria andO1dateIsNull() {
+            addCriterion("o_1date is null");
             return (Criteria) this;
         }
 
-        public Criteria andODateIsNotNull() {
-            addCriterion("o_date is not null");
+        public Criteria andO1dateIsNotNull() {
+            addCriterion("o_1date is not null");
             return (Criteria) this;
         }
 
-        public Criteria andODateEqualTo(String value) {
-            addCriterion("o_date =", value, "oDate");
+        public Criteria andO1dateEqualTo(String value) {
+            addCriterion("o_1date =", value, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateNotEqualTo(String value) {
-            addCriterion("o_date <>", value, "oDate");
+        public Criteria andO1dateNotEqualTo(String value) {
+            addCriterion("o_1date <>", value, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateGreaterThan(String value) {
-            addCriterion("o_date >", value, "oDate");
+        public Criteria andO1dateGreaterThan(String value) {
+            addCriterion("o_1date >", value, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateGreaterThanOrEqualTo(String value) {
-            addCriterion("o_date >=", value, "oDate");
+        public Criteria andO1dateGreaterThanOrEqualTo(String value) {
+            addCriterion("o_1date >=", value, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateLessThan(String value) {
-            addCriterion("o_date <", value, "oDate");
+        public Criteria andO1dateLessThan(String value) {
+            addCriterion("o_1date <", value, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateLessThanOrEqualTo(String value) {
-            addCriterion("o_date <=", value, "oDate");
+        public Criteria andO1dateLessThanOrEqualTo(String value) {
+            addCriterion("o_1date <=", value, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateLike(String value) {
-            addCriterion("o_date like", value, "oDate");
+        public Criteria andO1dateLike(String value) {
+            addCriterion("o_1date like", value, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateNotLike(String value) {
-            addCriterion("o_date not like", value, "oDate");
+        public Criteria andO1dateNotLike(String value) {
+            addCriterion("o_1date not like", value, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateIn(List<String> values) {
-            addCriterion("o_date in", values, "oDate");
+        public Criteria andO1dateIn(List<String> values) {
+            addCriterion("o_1date in", values, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateNotIn(List<String> values) {
-            addCriterion("o_date not in", values, "oDate");
+        public Criteria andO1dateNotIn(List<String> values) {
+            addCriterion("o_1date not in", values, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateBetween(String value1, String value2) {
-            addCriterion("o_date between", value1, value2, "oDate");
+        public Criteria andO1dateBetween(String value1, String value2) {
+            addCriterion("o_1date between", value1, value2, "o1date");
             return (Criteria) this;
         }
 
-        public Criteria andODateNotBetween(String value1, String value2) {
-            addCriterion("o_date not between", value1, value2, "oDate");
+        public Criteria andO1dateNotBetween(String value1, String value2) {
+            addCriterion("o_1date not between", value1, value2, "o1date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateIsNull() {
+            addCriterion("o_2date is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateIsNotNull() {
+            addCriterion("o_2date is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateEqualTo(String value) {
+            addCriterion("o_2date =", value, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateNotEqualTo(String value) {
+            addCriterion("o_2date <>", value, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateGreaterThan(String value) {
+            addCriterion("o_2date >", value, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateGreaterThanOrEqualTo(String value) {
+            addCriterion("o_2date >=", value, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateLessThan(String value) {
+            addCriterion("o_2date <", value, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateLessThanOrEqualTo(String value) {
+            addCriterion("o_2date <=", value, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateLike(String value) {
+            addCriterion("o_2date like", value, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateNotLike(String value) {
+            addCriterion("o_2date not like", value, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateIn(List<String> values) {
+            addCriterion("o_2date in", values, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateNotIn(List<String> values) {
+            addCriterion("o_2date not in", values, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateBetween(String value1, String value2) {
+            addCriterion("o_2date between", value1, value2, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2dateNotBetween(String value1, String value2) {
+            addCriterion("o_2date not between", value1, value2, "o2date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateIsNull() {
+            addCriterion("o_3date is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateIsNotNull() {
+            addCriterion("o_3date is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateEqualTo(String value) {
+            addCriterion("o_3date =", value, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateNotEqualTo(String value) {
+            addCriterion("o_3date <>", value, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateGreaterThan(String value) {
+            addCriterion("o_3date >", value, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateGreaterThanOrEqualTo(String value) {
+            addCriterion("o_3date >=", value, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateLessThan(String value) {
+            addCriterion("o_3date <", value, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateLessThanOrEqualTo(String value) {
+            addCriterion("o_3date <=", value, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateLike(String value) {
+            addCriterion("o_3date like", value, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateNotLike(String value) {
+            addCriterion("o_3date not like", value, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateIn(List<String> values) {
+            addCriterion("o_3date in", values, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateNotIn(List<String> values) {
+            addCriterion("o_3date not in", values, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateBetween(String value1, String value2) {
+            addCriterion("o_3date between", value1, value2, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3dateNotBetween(String value1, String value2) {
+            addCriterion("o_3date not between", value1, value2, "o3date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateIsNull() {
+            addCriterion("o_4date is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateIsNotNull() {
+            addCriterion("o_4date is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateEqualTo(String value) {
+            addCriterion("o_4date =", value, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateNotEqualTo(String value) {
+            addCriterion("o_4date <>", value, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateGreaterThan(String value) {
+            addCriterion("o_4date >", value, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateGreaterThanOrEqualTo(String value) {
+            addCriterion("o_4date >=", value, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateLessThan(String value) {
+            addCriterion("o_4date <", value, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateLessThanOrEqualTo(String value) {
+            addCriterion("o_4date <=", value, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateLike(String value) {
+            addCriterion("o_4date like", value, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateNotLike(String value) {
+            addCriterion("o_4date not like", value, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateIn(List<String> values) {
+            addCriterion("o_4date in", values, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateNotIn(List<String> values) {
+            addCriterion("o_4date not in", values, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateBetween(String value1, String value2) {
+            addCriterion("o_4date between", value1, value2, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4dateNotBetween(String value1, String value2) {
+            addCriterion("o_4date not between", value1, value2, "o4date");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payIsNull() {
+            addCriterion("o_1pay is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payIsNotNull() {
+            addCriterion("o_1pay is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payEqualTo(Boolean value) {
+            addCriterion("o_1pay =", value, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payNotEqualTo(Boolean value) {
+            addCriterion("o_1pay <>", value, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payGreaterThan(Boolean value) {
+            addCriterion("o_1pay >", value, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("o_1pay >=", value, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payLessThan(Boolean value) {
+            addCriterion("o_1pay <", value, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payLessThanOrEqualTo(Boolean value) {
+            addCriterion("o_1pay <=", value, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payIn(List<Boolean> values) {
+            addCriterion("o_1pay in", values, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payNotIn(List<Boolean> values) {
+            addCriterion("o_1pay not in", values, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payBetween(Boolean value1, Boolean value2) {
+            addCriterion("o_1pay between", value1, value2, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO1payNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("o_1pay not between", value1, value2, "o1pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payIsNull() {
+            addCriterion("o_2pay is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payIsNotNull() {
+            addCriterion("o_2pay is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payEqualTo(Boolean value) {
+            addCriterion("o_2pay =", value, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payNotEqualTo(Boolean value) {
+            addCriterion("o_2pay <>", value, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payGreaterThan(Boolean value) {
+            addCriterion("o_2pay >", value, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("o_2pay >=", value, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payLessThan(Boolean value) {
+            addCriterion("o_2pay <", value, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payLessThanOrEqualTo(Boolean value) {
+            addCriterion("o_2pay <=", value, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payIn(List<Boolean> values) {
+            addCriterion("o_2pay in", values, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payNotIn(List<Boolean> values) {
+            addCriterion("o_2pay not in", values, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payBetween(Boolean value1, Boolean value2) {
+            addCriterion("o_2pay between", value1, value2, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO2payNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("o_2pay not between", value1, value2, "o2pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payIsNull() {
+            addCriterion("o_3pay is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payIsNotNull() {
+            addCriterion("o_3pay is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payEqualTo(Boolean value) {
+            addCriterion("o_3pay =", value, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payNotEqualTo(Boolean value) {
+            addCriterion("o_3pay <>", value, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payGreaterThan(Boolean value) {
+            addCriterion("o_3pay >", value, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("o_3pay >=", value, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payLessThan(Boolean value) {
+            addCriterion("o_3pay <", value, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payLessThanOrEqualTo(Boolean value) {
+            addCriterion("o_3pay <=", value, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payIn(List<Boolean> values) {
+            addCriterion("o_3pay in", values, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payNotIn(List<Boolean> values) {
+            addCriterion("o_3pay not in", values, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payBetween(Boolean value1, Boolean value2) {
+            addCriterion("o_3pay between", value1, value2, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO3payNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("o_3pay not between", value1, value2, "o3pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payIsNull() {
+            addCriterion("o_4pay is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payIsNotNull() {
+            addCriterion("o_4pay is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payEqualTo(Boolean value) {
+            addCriterion("o_4pay =", value, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payNotEqualTo(Boolean value) {
+            addCriterion("o_4pay <>", value, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payGreaterThan(Boolean value) {
+            addCriterion("o_4pay >", value, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("o_4pay >=", value, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payLessThan(Boolean value) {
+            addCriterion("o_4pay <", value, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payLessThanOrEqualTo(Boolean value) {
+            addCriterion("o_4pay <=", value, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payIn(List<Boolean> values) {
+            addCriterion("o_4pay in", values, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payNotIn(List<Boolean> values) {
+            addCriterion("o_4pay not in", values, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payBetween(Boolean value1, Boolean value2) {
+            addCriterion("o_4pay between", value1, value2, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andO4payNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("o_4pay not between", value1, value2, "o4pay");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationIsNull() {
+            addCriterion("en_evaluation is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationIsNotNull() {
+            addCriterion("en_evaluation is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationEqualTo(Integer value) {
+            addCriterion("en_evaluation =", value, "enEvaluation");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationNotEqualTo(Integer value) {
+            addCriterion("en_evaluation <>", value, "enEvaluation");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationGreaterThan(Integer value) {
+            addCriterion("en_evaluation >", value, "enEvaluation");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationGreaterThanOrEqualTo(Integer value) {
+            addCriterion("en_evaluation >=", value, "enEvaluation");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationLessThan(Integer value) {
+            addCriterion("en_evaluation <", value, "enEvaluation");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationLessThanOrEqualTo(Integer value) {
+            addCriterion("en_evaluation <=", value, "enEvaluation");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationIn(List<Integer> values) {
+            addCriterion("en_evaluation in", values, "enEvaluation");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationNotIn(List<Integer> values) {
+            addCriterion("en_evaluation not in", values, "enEvaluation");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationBetween(Integer value1, Integer value2) {
+            addCriterion("en_evaluation between", value1, value2, "enEvaluation");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnEvaluationNotBetween(Integer value1, Integer value2) {
+            addCriterion("en_evaluation not between", value1, value2, "enEvaluation");
             return (Criteria) this;
         }
 

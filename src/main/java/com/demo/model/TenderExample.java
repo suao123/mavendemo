@@ -793,6 +793,66 @@ public class TenderExample {
             addCriterion("t_enddate not between", value1, value2, "tEnddate");
             return (Criteria) this;
         }
+
+        public Criteria andTAddpersonIsNull() {
+            addCriterion("t_addperson is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonIsNotNull() {
+            addCriterion("t_addperson is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonEqualTo(Integer value) {
+            addCriterion("t_addperson =", value, "tAddperson");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonNotEqualTo(Integer value) {
+            addCriterion("t_addperson <>", value, "tAddperson");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonGreaterThan(Integer value) {
+            addCriterion("t_addperson >", value, "tAddperson");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonGreaterThanOrEqualTo(Integer value) {
+            addCriterion("t_addperson >=", value, "tAddperson");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonLessThan(Integer value) {
+            addCriterion("t_addperson <", value, "tAddperson");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonLessThanOrEqualTo(Integer value) {
+            addCriterion("t_addperson <=", value, "tAddperson");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonIn(List<Integer> values) {
+            addCriterion("t_addperson in", values, "tAddperson");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonNotIn(List<Integer> values) {
+            addCriterion("t_addperson not in", values, "tAddperson");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonBetween(Integer value1, Integer value2) {
+            addCriterion("t_addperson between", value1, value2, "tAddperson");
+            return (Criteria) this;
+        }
+
+        public Criteria andTAddpersonNotBetween(Integer value1, Integer value2) {
+            addCriterion("t_addperson not between", value1, value2, "tAddperson");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
