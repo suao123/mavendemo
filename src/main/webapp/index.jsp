@@ -1,3 +1,3 @@
 <%
-        request.getRequestDispatcher("/Enterpriseadmin/tender").forward(request, response);
+        request.getRequestDispatcher("/index").forward(request, response);
 %>

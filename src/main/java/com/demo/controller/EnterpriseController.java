@@ -41,12 +41,12 @@ public class EnterpriseController {
     @Autowired
     private StudioService studioService;
 
-    @RequestMapping(value = {"/Enterpriseadmin/index",  "/Enterpriseamdin"})
+    @RequestMapping("/index")
     public String login(){
-        return "/Enterpriseadmin/login";
+        return "/Enterprise/login";
     }
 
-    @RequestMapping(value = "/Enterpriseadmin/loginCheck")
+    @RequestMapping(value = "/Enterprise/loginCheck")
     public @ResponseBody
     Object loginCheck(HttpServletRequest request, HttpServletResponse response, HttpSession session){
         String e_phone = request.getParameter("e_phone");
@@ -65,18 +65,18 @@ public class EnterpriseController {
         return res;
     }
 
-    @RequestMapping("/Enterpriseadmin/loginout")
+    @RequestMapping("/Enterprise/loginout")
     public  String logout(HttpSession session){
         session.removeAttribute("enterprise");
-        return "redirect:/Enterpriseadmin";
+        return "redirect:/Enterprise";
     }
 
-    @RequestMapping("/Enterpriseadmin/register")
+    @RequestMapping("/Enterprise/register")
     public String register(){
-        return "/Enterpriseadmin/register";
+        return "/Enterprise/register";
     }
 
-    @RequestMapping("/Enterpriseadmin/registerCheck")
+    @RequestMapping("/Enterprise/registerCheck")
     public @ResponseBody Object registerCheck(HttpServletRequest request){
         String phone = request.getParameter("phone");
         String enname = request.getParameter("enname");
@@ -97,20 +97,23 @@ public class EnterpriseController {
         enterprise.setPwd(pwd);
         enterprise.setEnPhone(phone);
         enterprise.setEnState(0);
+
+
         if(enterpriseService.isExist(phone)){
             res.put("stateCode", "0");
         } else {
             res.put("stateCode", "1");
+            enterpriseService.add(enterprise);
         }
         return res;
     }
 
-    @RequestMapping("/Enterpriseadmin/index")
+    @RequestMapping("/Enterprise/index")
     public String home(){
-        return "/Enterpriseadmin/index";
+        return "/Enterprise/index";
     }
 
-    @RequestMapping("/Enterpriseadmin/update")
+    @RequestMapping("/Enterprise/update")
     public @ResponseBody Object updateenterprise(HttpServletRequest request, HttpSession session){
         Enterprise oldEnterprise = (Enterprise) session.getAttribute("enterprise");
         String  e_phone = oldEnterprise.getEnPhone();
@@ -142,12 +145,12 @@ public class EnterpriseController {
         return res;
     }
 
-    @RequestMapping("/Enterpriseadmin/tender")
+    @RequestMapping("/Enterprise/tender")
     public String Tender(){
-        return "/Enterpriseadmin/tender";
+        return "/Enterprise/tender";
     }
 
-    @RequestMapping(value = "/Enterpriseadmin/addTender", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "/Enterprise/addTender", method = {RequestMethod.GET, RequestMethod.POST})
     public  @ResponseBody Object addTender(Model model, HttpServletRequest request, HttpSession session) throws IOException{
         Enterprise enterprise = (Enterprise) session.getAttribute("enterprise");
         Tender tender = new Tender();
@@ -189,7 +192,7 @@ public class EnterpriseController {
             return res;
     }
 
-    @RequestMapping("/Enterpriseadmin/showTender/{page}")
+    @RequestMapping("/Enterprise/showTender/{page}")
     public String showTender(Model model, HttpSession session, @PathVariable("page") int page){
         Enterprise enterprise = (Enterprise) session.getAttribute("enterprise");
         String en_phone = enterprise.getEnPhone();
@@ -215,10 +218,10 @@ public class EnterpriseController {
         else
             model.addAttribute("end", String.valueOf(page * 20 - 1));
         model.addAttribute("enterprises", enterprises);
-        return "/Enterpriseadmin/showTender";
+        return "/Enterprise/showTender";
     }
 
-    @RequestMapping("/Enterpriseadmin/allTender/{page}")
+    @RequestMapping("/Enterprise/allTender/{page}")
     public String allTender(Model model, @PathVariable("page") int page){
         List<Enterprise> enterprises = enterpriseService.list()
                                                                                         .parallelStream()
@@ -241,10 +244,10 @@ public class EnterpriseController {
         else
             model.addAttribute("end", String.valueOf(page * 20 - 1));
         model.addAttribute("enterprises", enterprises);
-        return "/Enterpriseadmin/allTender";
+        return "/Enterprise/allTender";
     }
 
-    @RequestMapping("/Enterpriseadmin/showOrder/{page}")
+    @RequestMapping("/Enterprise/showOrder/{page}")
     public String showOrder(Model model, @PathVariable("page") int page, HttpSession session){
         Enterprise enterprise  = (Enterprise) session.getAttribute("enterprise");
         String en_phone = enterprise.getEnPhone();
@@ -268,10 +271,10 @@ public class EnterpriseController {
             model.addAttribute("end", String.valueOf(page * 20 - 1));
         model.addAttribute("enterprises", orders);
         model.addAttribute("orders", orders);
-        return "/Enterpriseadmin/showOrder";
+        return "/Enterprise/showOrder";
     }
 
-    @RequestMapping("/Enterpriseadmin/searchStudio/{page}")
+    @RequestMapping("/Enterprise/searchStudio/{page}")
     public String searchStudio(Model model, @RequestParam String keyword, @PathVariable("page") int page) {
         List<Studio> studios = studioService.search(keyword);
 
@@ -292,12 +295,12 @@ public class EnterpriseController {
         else
             model.addAttribute("end", String.valueOf(page * 20 - 1));
         model.addAttribute("studios", studios);
-        return "/Enterpriseadmin/searchStudio";
+        return "/Enterprise/searchStudio";
     }
 
-    @RequestMapping(value = "/Enterpriseadmin/search")
+    @RequestMapping(value = "/Enterprise/search")
     public String search() {
-        return "/Enterpriseadmin/search";
+        return "/Enterprise/search";
     }
 
 }
