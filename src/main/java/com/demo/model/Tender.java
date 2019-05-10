@@ -21,9 +21,11 @@ public class Tender {
 
     private String tEnddate;
 
+    private String sPhone;
+
     private Integer tAddperson;
 
-    public Tender(Integer tId, String tTname, String tName, String tPhone, String tEmail, String tStartdate, String tTxt, String tInfo, String enPhone, String tEnddate, Integer tAddperson) {
+    public Tender(Integer tId, String tTname, String tName, String tPhone, String tEmail, String tStartdate, String tTxt, String tInfo, String enPhone, String tEnddate, String sPhone, Integer tAddperson) {
         this.tId = tId;
         this.tTname = tTname;
         this.tName = tName;
@@ -34,6 +36,7 @@ public class Tender {
         this.tInfo = tInfo;
         this.enPhone = enPhone;
         this.tEnddate = tEnddate;
+        this.sPhone = sPhone;
         this.tAddperson = tAddperson;
     }
 
@@ -119,6 +122,14 @@ public class Tender {
 
     public void settEnddate(String tEnddate) {
         this.tEnddate = tEnddate == null ? null : tEnddate.trim();
+    }
+
+    public String getsPhone() {
+        return sPhone;
+    }
+
+    public void setsPhone(String sPhone) {
+        this.sPhone = sPhone == null ? null : sPhone.trim();
     }
 
     public Integer gettAddperson() {

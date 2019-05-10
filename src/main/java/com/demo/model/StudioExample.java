@@ -384,6 +384,76 @@ public class StudioExample {
             return (Criteria) this;
         }
 
+        public Criteria andSInfoIsNull() {
+            addCriterion("s_info is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoIsNotNull() {
+            addCriterion("s_info is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoEqualTo(String value) {
+            addCriterion("s_info =", value, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoNotEqualTo(String value) {
+            addCriterion("s_info <>", value, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoGreaterThan(String value) {
+            addCriterion("s_info >", value, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoGreaterThanOrEqualTo(String value) {
+            addCriterion("s_info >=", value, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoLessThan(String value) {
+            addCriterion("s_info <", value, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoLessThanOrEqualTo(String value) {
+            addCriterion("s_info <=", value, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoLike(String value) {
+            addCriterion("s_info like", value, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoNotLike(String value) {
+            addCriterion("s_info not like", value, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoIn(List<String> values) {
+            addCriterion("s_info in", values, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoNotIn(List<String> values) {
+            addCriterion("s_info not in", values, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoBetween(String value1, String value2) {
+            addCriterion("s_info between", value1, value2, "sInfo");
+            return (Criteria) this;
+        }
+
+        public Criteria andSInfoNotBetween(String value1, String value2) {
+            addCriterion("s_info not between", value1, value2, "sInfo");
+            return (Criteria) this;
+        }
+
         public Criteria andPwdIsNull() {
             addCriterion("pwd is null");
             return (Criteria) this;

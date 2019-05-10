@@ -2,17 +2,16 @@ package com.demo.controller;
 
 import com.demo.model.Enterprise;
 import com.demo.model.Order;
+import com.demo.model.Studio;
 import com.demo.model.Tender;
 import com.demo.service.EnterpriseService;
 import com.demo.service.OrderService;
+import com.demo.service.StudioService;
 import com.demo.service.TenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -38,6 +37,9 @@ public class EnterpriseController {
 
     @Autowired
     private TenderService tenderService;
+
+    @Autowired
+    private StudioService studioService;
 
     @RequestMapping(value = {"/Enterpriseadmin/index",  "/Enterpriseamdin"})
     public String login(){
@@ -65,6 +67,7 @@ public class EnterpriseController {
 
     @RequestMapping("/Enterpriseadmin/loginout")
     public  String logout(HttpSession session){
+        session.removeAttribute("enterprise");
         return "redirect:/Enterpriseadmin";
     }
 
@@ -78,14 +81,13 @@ public class EnterpriseController {
         String phone = request.getParameter("phone");
         String enname = request.getParameter("enname");
         String name = request.getParameter("name");
-        String boss = request.getParameter("boss");
         String email = request.getParameter("email");
         String pwd = request.getParameter("pwd");
         String validateCode = request.getParameter("validateCode").toLowerCase();
         String currentValidateCode = String.valueOf(request.getSession().getAttribute("validateCode")).toLowerCase();
         HashMap<String, String> res = new HashMap<>();
         if(validateCode.equals(currentValidateCode)){
-            res.put("stateCode", "1");
+            res.put("stateCode", "0");
             return res;
         }
         Enterprise enterprise = new Enterprise();
@@ -94,7 +96,6 @@ public class EnterpriseController {
         enterprise.setEnEmail(email);
         enterprise.setPwd(pwd);
         enterprise.setEnPhone(phone);
-        enterprise.setEnBoss(boss);
         enterprise.setEnState(0);
         if(enterpriseService.isExist(phone)){
             res.put("stateCode", "0");
@@ -130,7 +131,7 @@ public class EnterpriseController {
         newEnterprise.setEnName(name);
         newEnterprise.setPwd(pwd);
         newEnterprise.setEnInfo(info);
-        if(phone.length() == 1){
+        if(phone.length() == 11){
             enterpriseService.update(phone, newEnterprise);
             session.removeAttribute("enterprise");
             session.setAttribute("enterprise", newEnterprise);
@@ -270,5 +271,33 @@ public class EnterpriseController {
         return "/Enterpriseadmin/showOrder";
     }
 
+    @RequestMapping("/Enterpriseadmin/searchStudio/{page}")
+    public String searchStudio(Model model, @RequestParam String keyword, @PathVariable("page") int page) {
+        List<Studio> studios = studioService.search(keyword);
+
+        model.addAttribute("page", page);
+        if (studios.size() % 20 == 0)
+            model.addAttribute("endPage", studios.size() / 20);
+        else
+            model.addAttribute("endPage", studios.size() / 20 + 1);
+
+        model.addAttribute("begin", String.valueOf((page - 1) * 20));
+
+        if (page == (studios.size() / 20) + 1)
+            if (studios.size() / 20 == 0) {
+                model.addAttribute("end", studios.size());
+            } else {
+                model.addAttribute("end", studios.size() - 1);
+            }
+        else
+            model.addAttribute("end", String.valueOf(page * 20 - 1));
+        model.addAttribute("studios", studios);
+        return "/Enterpriseadmin/searchStudio";
+    }
+
+    @RequestMapping(value = "/Enterpriseadmin/search")
+    public String search() {
+        return "/Enterpriseadmin/search";
+    }
 
 }

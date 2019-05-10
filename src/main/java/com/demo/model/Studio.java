@@ -9,15 +9,18 @@ public class Studio {
 
     private String sEmail;
 
+    private String sInfo;
+
     private String pwd;
 
     private Integer sState;
 
-    public Studio(String sPhone, String sSname, String sName, String sEmail, String pwd, Integer sState) {
+    public Studio(String sPhone, String sSname, String sName, String sEmail, String sInfo, String pwd, Integer sState) {
         this.sPhone = sPhone;
         this.sSname = sSname;
         this.sName = sName;
         this.sEmail = sEmail;
+        this.sInfo = sInfo;
         this.pwd = pwd;
         this.sState = sState;
     }
@@ -56,6 +59,14 @@ public class Studio {
 
     public void setsEmail(String sEmail) {
         this.sEmail = sEmail == null ? null : sEmail.trim();
+    }
+
+    public String getsInfo() {
+        return sInfo;
+    }
+
+    public void setsInfo(String sInfo) {
+        this.sInfo = sInfo == null ? null : sInfo.trim();
     }
 
     public String getPwd() {

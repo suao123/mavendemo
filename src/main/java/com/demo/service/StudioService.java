@@ -60,4 +60,13 @@ public interface StudioService {
      * @param studio
      */
     void add(Studio studio);
+
+
+    /**
+     * 根据keyword返回相应的工作室集合
+     *
+     * @param keyword
+     * @return
+     */
+    List<Studio> search(String keyword);
 }

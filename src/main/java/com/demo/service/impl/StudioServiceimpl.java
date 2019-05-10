@@ -74,4 +74,11 @@ public class StudioServiceimpl  implements StudioService {
     public void add(Studio studio) {
         studioMapper.insert(studio);
     }
+
+    @Override
+    public List<Studio> search(String keyword) {
+        StudioExample example = new StudioExample();
+        example.or().andSSnameLike("%" + keyword + "%");
+        return studioMapper.selectByExample(example);
+    }
 }

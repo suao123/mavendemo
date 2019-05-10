@@ -67,11 +67,11 @@
         </javaClientGenerator>
 
 
-        <table tableName="mess_studio" domainObjectName="Studio"
-               enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true">
-        </table>
+<!--        <table tableName="mess_studio" domainObjectName="Studio"-->
+<!--               enableCountByExample="true" enableUpdateByExample="true"-->
+<!--               enableDeleteByExample="true" enableSelectByExample="true"-->
+<!--               selectByExampleQueryId="true">-->
+<!--        </table>-->
 
 <!--        <table tableName="mess_enterprise" domainObjectName="Enterprise"-->
 <!--               enableCountByExample="true" enableUpdateByExample="true"-->

@@ -794,6 +794,76 @@ public class TenderExample {
             return (Criteria) this;
         }
 
+        public Criteria andSPhoneIsNull() {
+            addCriterion("s_phone is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneIsNotNull() {
+            addCriterion("s_phone is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneEqualTo(String value) {
+            addCriterion("s_phone =", value, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneNotEqualTo(String value) {
+            addCriterion("s_phone <>", value, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneGreaterThan(String value) {
+            addCriterion("s_phone >", value, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneGreaterThanOrEqualTo(String value) {
+            addCriterion("s_phone >=", value, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneLessThan(String value) {
+            addCriterion("s_phone <", value, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneLessThanOrEqualTo(String value) {
+            addCriterion("s_phone <=", value, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneLike(String value) {
+            addCriterion("s_phone like", value, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneNotLike(String value) {
+            addCriterion("s_phone not like", value, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneIn(List<String> values) {
+            addCriterion("s_phone in", values, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneNotIn(List<String> values) {
+            addCriterion("s_phone not in", values, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneBetween(String value1, String value2) {
+            addCriterion("s_phone between", value1, value2, "sPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPhoneNotBetween(String value1, String value2) {
+            addCriterion("s_phone not between", value1, value2, "sPhone");
+            return (Criteria) this;
+        }
+
         public Criteria andTAddpersonIsNull() {
             addCriterion("t_addperson is null");
             return (Criteria) this;
