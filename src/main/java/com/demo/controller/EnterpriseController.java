@@ -104,9 +104,9 @@ public class EnterpriseController {
         return res;
     }
 
-    @RequestMapping("/Enterpriseadmin/home")
+    @RequestMapping("/Enterpriseadmin/index")
     public String home(){
-        return "/Enterpriseadmin/home";
+        return "/Enterpriseadmin/index";
     }
 
     @RequestMapping("/Enterpriseadmin/update")

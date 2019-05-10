@@ -5,33 +5,20 @@
       <artifact name="maven-demo:war exploded" />
     </artifacts-to-build>
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/demo/service/StudioService.java" line="28" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="016cf7e8-ae20-412f-8ca2-7090e31da5c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/StudioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/StudioService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/impl/StudioServiceimpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/e612a763-2889-47fa-8781-a081c6ef457e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e612a763-2889-47fa-8781-a081c6ef457e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e8f86cd8-03ba-499f-99f1-e70750fe212a.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controller/EnterpriseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/EnterpriseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/dao/CreditMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/dao/EnterpriseMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/dao/OrderMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/dao/TenderMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/Credit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/CreditExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/Enterprise.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/EnterpriseExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/OrderExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/Tender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/model/TenderExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/service/TenterpriseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/TenderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/service/impl/TenderServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/impl/TenderServiceimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generator.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generator.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/demo/controller/adminConterller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/demo/controller/AdminConterller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CreditMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/EnterpriseMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TenderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Enterpriseadmin/tender.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Enterpriseadmin/tender.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo/controller/EnterpriseController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo/dao/CreditMapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo/dao/EnterpriseMapper.class" beforeDir="false" />
@@ -57,58 +44,7 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/TenderExample$Criterion.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/TenderExample$GeneratedCriteria.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/demo/model/TenderExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/CreditService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/EnterpriseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/OrderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/TenterpriseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/impl/CreditServiceimpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/impl/EnterpriseServiceimpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/impl/OrderServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/demo/service/impl/TenderServiceimpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/generator.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/generator.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CreditMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/EnterpriseMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/OrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TenderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/controller/EnterpriseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/dao/CreditMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/dao/EnterpriseMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/dao/OrderMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/dao/TenderMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/Credit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/CreditExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/CreditExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/CreditExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/CreditExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/Enterprise.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/EnterpriseExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/EnterpriseExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/EnterpriseExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/EnterpriseExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/OrderExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/OrderExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/OrderExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/OrderExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/Tender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/TenderExample$Criteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/TenderExample$Criterion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/TenderExample$GeneratedCriteria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/model/TenderExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/service/CreditService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/service/EnterpriseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/service/OrderService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/service/TenterpriseService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/service/impl/CreditServiceimpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/service/impl/EnterpriseServiceimpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/service/impl/OrderServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/com/demo/service/impl/TenderServiceimpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/generator.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/generator.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/mapper/CreditMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/mapper/EnterpriseMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/mapper/OrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/classes/mapper/TenderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-demo/WEB-INF/views/Enterpriseadmin/tender.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-demo/WEB-INF/views/Enterpriseadmin/tender.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/generatorConfig.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -153,11 +89,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/EnterpriseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2735">
-              <caret line="184" column="40" selection-start-line="184" selection-start-column="40" selection-end-line="184" selection-end-column="40" />
+            <state relative-caret-position="291">
+              <caret line="108" column="38" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,30 +102,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="das://e612a763-2889-47fa-8781-a081c6ef457e/schema/demo/table/mess_order">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true">
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="das://e612a763-2889-47fa-8781-a081c6ef457e/schema/demo/table/mess_order.sql">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/StudioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="16" column="111" selection-end-line="16" selection-end-column="111" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/impl/TenderServiceimpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="381">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+                <element signature="e#439#440#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -200,6 +121,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -215,7 +138,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Enterpriseadmin/tender.jsp" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e612a763-2889-47fa-8781-a081c6ef457e/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/generator.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/demo/service/EnterpriseService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/demo/service/impl/CreditServiceimpl.java" />
@@ -225,8 +147,15 @@
         <option value="$PROJECT_DIR$/src/main/java/com/demo/service/impl/EnterpriseServiceimpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/demo/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/demo/service/impl/TenderServiceimpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/demo/controller/EnterpriseController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/demo/controller/adminConterller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/demo/controller/StdioController.java" />
         <option value="e612a763-2889-47fa-8781-a081c6ef457e/schema/demo/table/mess_order.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/demo/service/StudioService.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e612a763-2889-47fa-8781-a081c6ef457e/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/demo/service/impl/StudioServiceimpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/demo/controller/StudioController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/demo/controller/EnterpriseController.java" />
       </list>
     </option>
   </component>
@@ -246,11 +175,16 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="maven-demo" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="y" value="29" />
     <option name="width" value="960" />
@@ -303,36 +237,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mavendemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mavendemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mavendemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="maven-demo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mavendemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -483,12 +387,16 @@
       <workItem from="1557135599701" duration="599000" />
       <workItem from="1557221074311" duration="179000" />
       <workItem from="1557226413924" duration="4194000" />
-      <workItem from="1557312631701" duration="6196000" />
+      <workItem from="1557312631701" duration="6729000" />
+      <workItem from="1557322359586" duration="2306000" />
+      <workItem from="1557325030761" duration="194000" />
+      <workItem from="1557325579393" duration="39000" />
+      <workItem from="1557456244620" duration="996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15901000" />
+    <option name="totallyTimeSpent" value="19969000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -508,13 +416,13 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.14872068" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18923241" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info id="Learn" order="8" weight="0.32889125" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969433" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43013102" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.43013102" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -532,12 +440,12 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.32995737" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.17110874" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="JSF" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="CDI" order="7" />
-      <window_info active="true" anchor="right" id="Database" order="8" visible="true" weight="0.17750533" />
+      <window_info anchor="right" id="Database" order="8" weight="0.17750533" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="right" id="Bean Validation" order="11" weight="0.32995737" />
@@ -669,30 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e612a763-2889-47fa-8781-a081c6ef457e/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="5" column="54" selection-end-line="15" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generator.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/EnterpriseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-631">
-          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-jdk/src.zip!/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
@@ -737,27 +621,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/impl/EnterpriseServiceimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/impl/OrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/impl/TenderServiceimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -777,13 +644,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/EnterpriseController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/impl/TenderServiceimpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2735">
-          <caret line="184" column="40" selection-start-line="184" selection-start-column="40" selection-end-line="184" selection-end-column="40" />
+        <state relative-caret-position="456">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e612a763-2889-47fa-8781-a081c6ef457e/schema/demo/table/mess_order.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="10" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generator.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/EnterpriseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="65" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="69" column="32" selection-start-line="69" selection-start-column="32" selection-end-line="69" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -796,10 +691,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://e612a763-2889-47fa-8781-a081c6ef457e/schema/demo/table/mess_order.sql">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/AdminConterller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="16" column="111" selection-end-line="16" selection-end-column="111" />
+        <state relative-caret-position="152">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/impl/EnterpriseServiceimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="64" column="24" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e612a763-2889-47fa-8781-a081c6ef457e/schema/demo/table/mess_studio.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e612a763-2889-47fa-8781-a081c6ef457e/schema/demo/table/mess_studio">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e612a763-2889-47fa-8781-a081c6ef457e/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="5" column="110" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/impl/StudioServiceimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2297#2298#0" expanded="true" />
+            <element signature="e#2333#2334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/service/StudioService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/StudioController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/demo/controller/EnterpriseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="108" column="38" selection-start-line="108" selection-start-column="38" selection-end-line="108" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
